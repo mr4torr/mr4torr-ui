@@ -1,0 +1,23 @@
+{
+    "$schema": "https://ui.shadcn.com/schema.json",
+    "style": "base-vega",
+    "rsc": true,
+    "tsx": true,
+    "tailwind": {
+        "config": "",
+        "css": "src/styles/globals.css",
+        "baseColor": "neutral",
+        "cssVariables": true
+    },
+    "iconLibrary": "phosphor",
+    "aliases": {
+        "components": "@mr4torr/ui/components",
+        "utils": "@mr4torr/ui/lib/utils",
+        "hooks": "@mr4torr/ui/hooks",
+        "lib": "@mr4torr/ui/lib",
+        "ui": "@mr4torr/ui/components"
+    },
+    "rtl": false,
+    "menuColor": "default-translucent",
+    "menuAccent": "subtle"
+}

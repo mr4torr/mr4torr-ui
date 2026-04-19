@@ -1,0 +1,74 @@
+{
+    "name": "@mr4torr/ui",
+    "version": "0.1.0",
+    "type": "module",
+    "private": true,
+    "scripts": {
+        "build": "vite build",
+        "lint": "eslint",
+        "format": "prettier --write \"**/*.{ts,tsx}\"",
+        "typecheck": "tsc --noEmit",
+        "storybook": "storybook dev -p 6006",
+        "build-storybook": "storybook build",
+        "test": "vitest",
+        "test:ui": "vitest --project=storybook"
+    },
+    "dependencies": {
+        "@base-ui/react": "^1.4.0",
+        "@fontsource-variable/geist": "^5.2.8",
+        "@phosphor-icons/react": "^2.1.10",
+        "class-variance-authority": "^0.7.1",
+        "clsx": "^2.1.1",
+        "next-themes": "^0.4.6",
+        "react": "^19.2.4",
+        "react-dom": "^19.2.4",
+        "shadcn": "^4.3.0",
+        "sonner": "^2.0.7",
+        "tailwind-merge": "^3.5.0",
+        "tw-animate-css": "^1.4.0",
+        "zod": "^3.25.76"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "2.4.12",
+        "@chromatic-com/storybook": "^5.1.2",
+        "@storybook/addon-a11y": "^10.3.5",
+        "@storybook/addon-docs": "^10.3.5",
+        "@storybook/addon-onboarding": "^10.3.5",
+        "@storybook/addon-themes": "^10.3.5",
+        "@storybook/addon-vitest": "^10.3.5",
+        "@storybook/react-vite": "^10.3.5",
+        "@tailwindcss/vite": "^4.1.18",
+        "@turbo/gen": "^2.8.1",
+        "@types/node": "^25.1.0",
+        "@types/react": "^19.2.10",
+        "@types/react-dom": "^19.2.3",
+        "@vitejs/plugin-react": "^6.0.1",
+        "@vitest/browser-playwright": "^4.1.4",
+        "@vitest/coverage-v8": "^4.1.4",
+        "globals": "^17.2.0",
+        "playwright": "^1.59.1",
+        "storybook": "^10.3.5",
+        "tailwindcss": "^4.1.18",
+        "typescript": "^5.9.3",
+        "vitest": "^4.1.4"
+    },
+    "main": "./dist/my-library.umd.cjs",
+    "module": "./dist/my-library.js",
+    "exports": {
+        "./package.json": "./package.json",
+        "./globals.css": "./src/styles/globals.css",
+        "./node_modules/*": "./node_modules/*",
+        "./themes/lime.css": "./src/styles/themes/lime.css",
+        "./lib/*": "./src/lib/*.ts",
+        "./components/*": "./src/components/*.tsx",
+        "./hooks/*": "./src/hooks/*.ts"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mr4torr/mr4torr-ui.git"
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/",
+        "access": "restricted"
+    }
+}
