@@ -7,7 +7,7 @@ import { defineConfig } from "vite";
 // Coleta todos os entry points de componentes, hooks e lib
 const entries = Object.fromEntries(
     glob
-        .sync("src/{components,hooks,lib}/**/*.{ts,tsx}", {
+        .sync("src/{components,hooks,lib,styles}/**/*.{ts,tsx,css}", {
             ignore: [
                 "**/*.test.*",
                 "**/*.spec.*",
@@ -19,7 +19,7 @@ const entries = Object.fromEntries(
             // src/components/button.tsx -> components/button
             const key = file
                 .replace(/^src\//, "")
-                .replace(/\.(ts|tsx)$/, "");
+                .replace(/\.(ts|tsx|css)$/, "");
             return [key, resolve(__dirname, file)];
         }),
 );
@@ -53,7 +53,7 @@ export default defineConfig({
             },
         },
         cssCodeSplit: true,
-        minify: false,
+        minify: true,
     },
     resolve: {
         alias: {
