@@ -1,5 +1,6 @@
 {
-    "code_actions_on_format": {
+  "format_on_save": "on",
+  "code_actions_on_format": {
         "source.organizeImports.biome": true,
         "source.fixAll.biome": true
     },
@@ -8,15 +9,46 @@
             "name": "biome"
         }
     },
+    // "lsp": {
+    //     "biome": {
+    //         "settings": {
+    //             "config_path": "biome.json"
+    //         },
+    //         "binary": {
+    //             "path": "node_modules/@biomejs/biome/bin/biome",
+    //             "arguments": ["lsp-proxy"]
+    //         }
+    //     }
+    // },
     "lsp": {
-        "biome": {
+        "tailwindcss-language-server": {
             "settings": {
-                "config_path": "biome.json"
-            },
-            "binary": {
-                "path": "node_modules/@biomejs/biome/bin/biome",
-                "arguments": ["lsp-proxy"]
+                "classFunctions": ["cva", "cx", "cn"],
+                "experimental": {
+                    "classRegex": [
+                        "\\.className\\s*[+]?=\\s*['\"]([^'\"]*)['\"]",
+                        "\\.setAttributeNS\\(.*,\\s*['\"]class['\"],\\s*['\"]([^'\"]*)['\"]",
+                        "\\.setAttribute\\(['\"]class['\"],\\s*['\"]([^'\"]*)['\"]",
+                        "\\.classList\\.add\\(['\"]([^'\"]*)['\"]",
+                        "\\.classList\\.remove\\(['\"]([^'\"]*)['\"]",
+                        "\\.classList\\.toggle\\(['\"]([^'\"]*)['\"]",
+                        "\\.classList\\.contains\\(['\"]([^'\"]*)['\"]",
+                        "\\.classList\\.replace\\(\\s*['\"]([^'\"]*)['\"]",
+                        "\\.classList\\.replace\\([^,)]+,\\s*['\"]([^'\"]*)['\"]"
+                    ]
+                }
             }
+        }
+    },
+    "languages": {
+        "TSX": {
+            "language_servers": ["typescript-language-server", "!vtsls", "..."]
+        },
+        "JavaScript": {
+            "language_servers": ["typescript-language-server", "!vtsls", "..."]
+        },
+        "TypeScript": {
+            "language_servers": ["typescript-language-server", "!vtsls", "..."]
         }
     }
 }
