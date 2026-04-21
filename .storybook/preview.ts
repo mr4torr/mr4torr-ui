@@ -1,9 +1,9 @@
-import type { Preview } from "@storybook/react-vite";
 import { withThemeByDataAttribute } from "@storybook/addon-themes";
+import type { Preview } from "@storybook/react-vite";
 import React from "react";
 
 import "../src/styles/themes/lime.css";
-import "../src/styles/globals.css";
+import "./custom.css";
 
 const preview: Preview = {
     decorators: [
@@ -13,18 +13,16 @@ const preview: Preview = {
                 dark: "dark", // A classe "dark" é a padrão que o Tailwind/shadcn usa
             },
             defaultTheme: "light",
-            attributeName: 'data-theme',
+            attributeName: "data-theme",
         }),
-        (Story) => {
-            const isDarkMode = document.documentElement?.getAttribute("data-theme") === 'dark';
-            React.useEffect(() => {
-                const elem = document.documentElement.querySelectorAll('.sbdocs.sbdocs-preview.sb-unstyled')
-                if (elem) {
-                    elem.forEach(e => {
-                        e.classList.add('bg-background!')
-                    })
-                }
-            }, [isDarkMode]);
+        (Story, ctx) => {
+            // ctx.canvasElement
+            //     .closest(".sb-main-centered.sb-show-main")
+            //     ?.classList.add("bg-background");
+
+            ctx.canvasElement
+                .closest(".sbdocs.sbdocs-preview.sb-unstyled")
+                ?.classList.add("bg-background!");
 
             return React.createElement(Story);
         },
