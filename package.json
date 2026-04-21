@@ -74,31 +74,31 @@
     },
     "exports": {
         "./package.json": "./package.json",
-        "./globals.css": "./dist/styles/globals.css",
-        "./themes/lime.css": "./dist/styles/themes/lime.css",
+        "./globals.css": "./src/styles/globals.css",
+        "./themes/lime.css": "./src/styles/themes/lime.css",
         "./components/*": {
-            "types": "./dist/components/*.d.ts",
-            "import": "./dist/components/*.js"
+            "types": "./src/components/*.d.ts",
+            "import": "./src/components/*.tsx"
         },
         "./lib/*": {
-            "types": "./dist/lib/*.d.ts",
-            "import": "./dist/lib/*.js"
+            "types": "./src/lib/*.d.ts",
+            "import": "./src/lib/*.ts"
         },
         "./hooks/*": {
-            "types": "./dist/hooks/*.d.ts",
-            "import": "./dist/hooks/*.js"
+            "types": "./src/hooks/*.d.ts",
+            "import": "./src/hooks/*.ts"
         }
     },
     "typesVersions": {
         "*": {
             "components/*": [
-                "dist/components/*"
+                "src/components/*"
             ],
             "lib/*": [
-                "dist/lib/*"
+                "src/lib/*"
             ],
             "hooks/*": [
-                "dist/hooks/*"
+                "src/hooks/*"
             ]
         }
     },

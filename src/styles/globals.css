@@ -4,7 +4,6 @@
 @import "@fontsource-variable/geist";
 
 @custom-variant dark (&:is(.dark *));
-@custom-variant dark (&:where([data-theme="dark"] *));
 
 @source "../**/*.{ts,tsx}";
 
@@ -49,18 +48,4 @@
     --radius-3xl: calc(var(--radius) * 2.2);
     --radius-4xl: calc(var(--radius) * 2.6);
     --font-sans: "Geist Variable", sans-serif;
-}
-
-@layer base {
-    * {
-        @apply border-border outline-ring/50;
-    }
-
-    body {
-        @apply bg-background text-foreground;
-    }
-
-    button {
-        @apply cursor-pointer;
-    }
 }
