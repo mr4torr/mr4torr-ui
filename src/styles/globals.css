@@ -44,6 +44,7 @@
     --color-foreground-heavy: var(--foreground-heavy);
     --color-foreground-weak: var(--foreground-weak);
     --color-background: var(--background);
+    --color-alpha: var(--alpha);
     --radius-sm: calc(var(--radius) * 0.6);
     --radius-md: calc(var(--radius) * 0.8);
     --radius-lg: var(--radius);

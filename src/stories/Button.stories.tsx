@@ -47,6 +47,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {};
 export const Outline: Story = { args: { variant: "outline" } };
 export const Secondary: Story = { args: { variant: "secondary" } };
+export const Surface: Story = { args: { variant: "surface" } };
 export const Inverse: Story = { args: { variant: "inverse" } };
 export const Destructive: Story = { args: { variant: "destructive" } };
 export const Ghost: Story = { args: { variant: "ghost" } };
@@ -60,6 +61,9 @@ export const IconOutline: Story = {
 };
 export const IconSecondary: Story = {
     args: { variant: "secondary", size: "icon", children: <Icon /> },
+};
+export const IconSurface: Story = {
+    args: { variant: "surface", size: "icon", children: <Icon /> },
 };
 export const IconInverse: Story = {
     args: { variant: "inverse", size: "icon", children: <Icon /> },
