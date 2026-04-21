@@ -31,28 +31,11 @@ const meta = {
         // 1. Mudando de select para radio inline
         variant: {
             control: "select",
-            options: [
-                "default",
-                "outline",
-                "secondary",
-                "inverse",
-                "ghost",
-                "destructive",
-                "link",
-            ],
+            options: ["default", "outline", "secondary", "inverse", "ghost", "destructive", "link"],
         },
         size: {
             control: "select",
-            options: [
-                "default",
-                "xs",
-                "sm",
-                "lg",
-                "icon",
-                "icon-xs",
-                "icon-sm",
-                "icon-lg",
-            ],
+            options: ["default", "xs", "sm", "lg", "icon", "icon-xs", "icon-sm", "icon-lg"],
         },
     },
 } satisfies Meta<typeof LinkButton>;

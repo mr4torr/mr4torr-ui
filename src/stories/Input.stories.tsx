@@ -20,14 +20,13 @@ const meta = {
     args: {
         onClick: fn(),
     },
-    argTypes: {
-    },
+    argTypes: {},
 } satisfies Meta<typeof Input>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = { args: { placeholder: 'Default...' } };
-export const Invalid: Story = { args: { 'aria-invalid': true, placeholder: 'Invalid...' } };
-export const Disabled: Story = { args: { disabled: true, placeholder: 'Disabled...' } };
-export const File: Story = { args: { type: 'file', placeholder: 'File...' } };
+export const Default: Story = { args: { placeholder: "Default..." } };
+export const Invalid: Story = { args: { "aria-invalid": true, placeholder: "Invalid..." } };
+export const Disabled: Story = { args: { disabled: true, placeholder: "Disabled..." } };
+export const File: Story = { args: { type: "file", placeholder: "File..." } };

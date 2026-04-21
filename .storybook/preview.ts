@@ -20,9 +20,7 @@ const preview: Preview = {
             //     .closest(".sb-main-centered.sb-show-main")
             //     ?.classList.add("bg-background");
 
-            ctx.canvasElement
-                .closest(".sbdocs.sbdocs-preview.sb-unstyled")
-                ?.classList.add("bg-background!");
+            ctx.canvasElement.closest(".sbdocs.sbdocs-preview.sb-unstyled")?.classList.add("bg-background!");
 
             return React.createElement(Story);
         },

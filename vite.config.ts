@@ -8,18 +8,11 @@ import { defineConfig } from "vite";
 const entries = Object.fromEntries(
     glob
         .sync("src/{components,hooks,lib,styles}/**/*.{ts,tsx,css}", {
-            ignore: [
-                "**/*.test.*",
-                "**/*.spec.*",
-                "**/*.stories.*",
-                "**/*.d.ts",
-            ],
+            ignore: ["**/*.test.*", "**/*.spec.*", "**/*.stories.*", "**/*.d.ts"],
         })
         .map((file) => {
             // src/components/button.tsx -> components/button
-            const key = file
-                .replace(/^src\//, "")
-                .replace(/\.(ts|tsx|css)$/, "");
+            const key = file.replace(/^src\//, "").replace(/\.(ts|tsx|css)$/, "");
             return [key, resolve(__dirname, file)];
         }),
 );

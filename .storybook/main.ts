@@ -2,10 +2,7 @@ import type { StorybookConfig } from "@storybook/react-vite";
 import tailwindcss from "@tailwindcss/vite";
 
 const config: StorybookConfig = {
-    stories: [
-        "../src/stories/**/*.mdx",
-        "../src/stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
-    ],
+    stories: ["../src/stories/**/*.mdx", "../src/stories/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
     addons: [
         "@chromatic-com/storybook",
         "@storybook/addon-vitest",
@@ -21,8 +18,8 @@ const config: StorybookConfig = {
         return config;
     },
     docs: {
-        defaultName: 'Documentation UI',
+        defaultName: "Documentation UI",
         // docsMode: true,
-    }
+    },
 };
 export default config;

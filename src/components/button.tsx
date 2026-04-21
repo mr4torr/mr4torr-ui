@@ -7,8 +7,7 @@ const buttonVariants = cva(
     {
         variants: {
             variant: {
-                default:
-                    "bg-primary text-primary-foreground hover:bg-primary/80",
+                default: "bg-primary text-primary-foreground hover:bg-primary/80",
                 outline:
                     "border-input bg-muted/50 text-foreground hover:bg-muted aria-expanded:bg-muted aria-expanded:text-foreground dark:bg-muted/30 dark:hover:bg-muted/50",
                 secondary:
@@ -29,8 +28,7 @@ const buttonVariants = cva(
                 icon: "size-9",
                 "icon-xs":
                     "size-6 in-data-[slot=button-group]:rounded-md rounded-[min(var(--radius-md),8px)] [&_svg:not([class*='size-'])]:size-3",
-                "icon-sm":
-                    "size-8 in-data-[slot=button-group]:rounded-md rounded-[min(var(--radius-md),10px)]",
+                "icon-sm": "size-8 in-data-[slot=button-group]:rounded-md rounded-[min(var(--radius-md),10px)]",
                 "icon-lg": "size-10",
             },
         },
@@ -48,11 +46,7 @@ function Button({
     ...props
 }: ButtonPrimitive.Props & VariantProps<typeof buttonVariants>) {
     return (
-        <ButtonPrimitive
-            className={cn(buttonVariants({ variant, size, className }))}
-            data-slot="button"
-            {...props}
-        />
+        <ButtonPrimitive className={cn(buttonVariants({ variant, size, className }))} data-slot="button" {...props} />
     );
 }
 

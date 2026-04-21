@@ -2,5 +2,21 @@
     "code_actions_on_format": {
         "source.organizeImports.biome": true,
         "source.fixAll.biome": true
+    },
+    "formatter": {
+        "language_server": {
+            "name": "biome"
+        }
+    },
+    "lsp": {
+        "biome": {
+            "settings": {
+                "config_path": "biome.json"
+            },
+            "binary": {
+                "path": "node_modules/@biomejs/biome/bin/biome",
+                "arguments": ["lsp-proxy"]
+            }
+        }
     }
 }
