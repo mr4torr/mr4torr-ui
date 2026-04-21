@@ -2,12 +2,12 @@
     "compilerOptions": {
         "target": "ES2022",
         "lib": ["ES2022", "DOM", "DOM.Iterable"],
+        "composite": true, // Obrigatório para referências
         "module": "ESNext",
         "moduleResolution": "bundler",
         "jsx": "react-jsx",
         "skipLibCheck": true,
         "strict": true,
-        "noEmit": true,
         "paths": {
             "@mr4torr/ui/*": ["./src/*"]
         }

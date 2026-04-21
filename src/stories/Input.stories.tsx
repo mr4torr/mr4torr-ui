@@ -19,14 +19,24 @@ const meta = {
     // // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args
     args: {
         onClick: fn(),
+        disabled: false,
+        "aria-invalid": false,
+        placeholder: "Placeholder...",
     },
-    argTypes: {},
+    argTypes: {
+        type: {
+            control: "select",
+            options: ["text", "file"],
+        },
+    },
 } satisfies Meta<typeof Input>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = { args: { placeholder: "Default..." } };
-export const Invalid: Story = { args: { "aria-invalid": true, placeholder: "Invalid..." } };
-export const Disabled: Story = { args: { disabled: true, placeholder: "Disabled..." } };
-export const File: Story = { args: { type: "file", placeholder: "File..." } };
+export const Invalid: Story = { args: { placeholder: "Invalid...", "aria-invalid": true } };
+export const Disabled: Story = { args: { placeholder: "Disabled...", disabled: true } };
+export const File: Story = {
+    args: { placeholder: "File...", type: "file" },
+};
