@@ -1,34 +1,40 @@
+import type { AnyFieldApi } from "@tanstack/react-form";
 import { Field, FieldContent, FieldDescription, FieldLabel } from "../field";
 
-export function FieldGroup({
-    name,
-    label,
-    children,
-    help,
-    meta,
-}: {
-    name: string;
+interface FieldGroupProps {
+    field: AnyFieldApi;
     label?: string;
     help?: string;
+    hint?: React.ReactNode;
     children: React.ReactNode;
-    meta: { errors: { message: string }[]; isValid: boolean };
-}) {
+}
+
+export function FieldGroup({ field, label, children, help, hint }: FieldGroupProps) {
+    const fieldName = field?.name;
+    const fieldMeta = field?.state.meta;
+    const errors = (fieldMeta?.errors ?? []) as any[];
+    const isValid = fieldMeta?.isValid ?? true;
+
     return (
         <Field className="-space-y-2">
-            <FieldContent>{label && <FieldLabel htmlFor={name}>{label}</FieldLabel>}</FieldContent>
+            {label && (
+                <FieldContent className="relative">
+                    {hint && <div className=" absolute right-0 top-0">{hint}</div>}
+                    <FieldLabel htmlFor={fieldName}>{label}</FieldLabel>
+                </FieldContent>
+            )}
             <FieldContent>
                 {children}
-                {!meta.isValid &&
-                    meta.errors.map((error) =>
-                        error ? (
-                            <p className="text-destructive text-sm" key={error.message}>
-                                {error.message}
+                {!isValid &&
+                    errors.map((error) => {
+                        const message = typeof error === "string" ? error : error?.message;
+                        return message ? (
+                            <p className="text-destructive text-sm" key={message}>
+                                {message}
                             </p>
-                        ) : (
-                            ""
-                        ),
-                    )}
-                {meta.isValid && help && <FieldDescription>{help}</FieldDescription>}
+                        ) : null;
+                    })}
+                {isValid && help && <FieldDescription>{help}</FieldDescription>}
             </FieldContent>
         </Field>
     );

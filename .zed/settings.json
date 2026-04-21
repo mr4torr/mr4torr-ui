@@ -1,9 +1,9 @@
 {
-  "format_on_save": "on",
-  "code_actions_on_format": {
-    "source.action.useSortedAttributes.biome": true,
-    "source.fixAll.biome": true
-  },
+    "format_on_save": "on",
+    "code_actions_on_format": {
+        "source.action.useSortedAttributes.biome": true,
+        "source.fixAll.biome": true
+    },
     "formatter": {
         "language_server": {
             "name": "biome"

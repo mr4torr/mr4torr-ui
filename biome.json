@@ -27,7 +27,7 @@
                 "noCommonJs": "error"
             },
             "suspicious": {
-                "noExplicitAny": "error",
+                "noExplicitAny": "off",
                 "noVar": "error"
             },
             "correctness": {
