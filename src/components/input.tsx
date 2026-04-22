@@ -10,9 +10,9 @@ function Input({ className, type, ...props }: React.ComponentProps<"input">) {
                 "placeholder:text-muted-foreground/50",
                 "px-2.5 py-1 text-base outline-none transition-[color,box-shadow] md:text-sm",
                 "file:inline-flex file:h-7 file:border-0 file:bg-background file:font-medium file:text-foreground file:text-sm",
-                "focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/25 dark:focus-visible:ring-ring/40",
+                "focus-visible:border-ring focus-visible:bg-ring/5 dark:focus-visible:bg-ring/10 focus-visible:ring-3 focus-visible:ring-ring/25 dark:focus-visible:ring-ring/40",
                 "disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50",
-                "aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20",
+                "aria-invalid:border-destructive aria-invalid:bg-destructive/5 aria-invalid:ring-3 aria-invalid:ring-destructive/20",
                 "dark:bg-input/30 dark:file:bg-transparent file:text-foreground/70 file:px-2 dark:aria-invalid:border-destructive/70 dark:aria-invalid:ring-destructive/30 dark:aria-invalid:focus-visible:border-destructive",
                 className,
             )}
