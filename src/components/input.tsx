@@ -6,7 +6,7 @@ function Input({ className, type, ...props }: React.ComponentProps<"input">) {
     return (
         <InputPrimitive
             className={cn(
-                "h-9 w-full min-w-0 rounded-md border border-input bg-background",
+                "h-9 w-full min-w-0 rounded-md border border-input bg-background-weak",
                 "placeholder:text-muted-foreground/50",
                 "px-2.5 py-1 text-base outline-none transition-[color,box-shadow] md:text-sm",
                 "file:inline-flex file:h-7 file:border-0 file:bg-background file:font-medium file:text-foreground file:text-sm",
