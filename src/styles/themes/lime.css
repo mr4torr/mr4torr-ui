@@ -1,7 +1,7 @@
 :root,
 [data-theme="light"],
 .light {
-    --background: oklch(0.970 0 0);
+    --background: oklch(0.97 0 0);
     --background-weak: oklch(1 0 0);
     --foreground: oklch(0.427 0 0);
     --foreground-heavy: oklch(0.277 0 0);
