@@ -14,7 +14,7 @@ const buttonVariants = cva(
                     "bg-secondary text-secondary-foreground hover:bg-secondary/80 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
                 ghost: "hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50",
                 surface:
-                    "bg-alpha/10 text-alpha hover:bg-alpha/15 aria-expanded:bg-alpha/15 aria-expanded:text-background",
+                    "bg-alpha/5 dark:bg-alpha/10 text-alpha hover:bg-alpha/15 aria-expanded:bg-alpha/15 aria-expanded:text-background",
                 inverse:
                     "bg-alpha text-background  hover:bg-alpha/90 aria-expanded:bg-alpha/80 aria-expanded:text-background",
                 destructive:
