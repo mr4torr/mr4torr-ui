@@ -4,11 +4,12 @@ import { PreferenceProvider } from "./preference-provider";
 
 export function ThemeProvider({
   children,
+  storagePreferenceKey,
   ...props
-}: { children: ReactNode } & React.ComponentProps<typeof NextThemesProvider>) {
+}: { children: ReactNode, storagePreferenceKey?: string } & React.ComponentProps<typeof NextThemesProvider>) {
   return (
     <NextThemesProvider {...props}>
-      <PreferenceProvider>{children}</PreferenceProvider>
+      <PreferenceProvider storagePreferenceKey={storagePreferenceKey}>{children}</PreferenceProvider>
     </NextThemesProvider>
   );
 }

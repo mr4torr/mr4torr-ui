@@ -1,6 +1,7 @@
 import {
   createContext,
   type ReactNode,
+  useCallback,
   useEffect,
   useMemo,
   useState,
@@ -50,38 +51,45 @@ export const PreferencesContext = createContext<
   PreferencesContextProps | undefined
 >(undefined);
 
-const STORAGE_KEY = "app-preferences";
-
 const defaultPreferences: PreferencesProps = {
   fontSize: "default",
   contrast: "neutral",
   themeColor: "lime",
 };
 
-export function PreferenceProvider({ children }: { children: ReactNode }) {
+export function PreferenceProvider({ children, storagePreferenceKey = 'app-preferences' }: { children: ReactNode, storagePreferenceKey?: string }) {
   const [preferences, setPreferences] = useState<PreferencesProps>(() => {
     if (typeof window === "undefined") {
       return defaultPreferences;
     }
-    const stored = localStorage.getItem(STORAGE_KEY);
+    const stored = localStorage.getItem(storagePreferenceKey);
     return stored ? JSON.parse(stored) : defaultPreferences;
   });
 
+  const handlePreferenceStorage = useCallback(() => {
+      localStorage.setItem(storagePreferenceKey, JSON.stringify(preferences));
+
+      const root = window.document.documentElement;
+
+      // Remove previous attributes
+      root.removeAttribute("data-font-size");
+      root.removeAttribute("data-contrast");
+      root.removeAttribute("data-theme-color");
+
+      // Add new attributes
+      root.setAttribute("data-font-size", preferences.fontSize);
+      root.setAttribute("data-contrast", preferences.contrast);
+      root.setAttribute("data-theme-color", preferences.themeColor);
+  }, [preferences])
+
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(preferences));
-
-    const root = window.document.documentElement;
-
-    // Remove previous attributes
-    root.removeAttribute("data-font-size");
-    root.removeAttribute("data-contrast");
-    root.removeAttribute("data-theme-color");
-
-    // Add new attributes
-    root.setAttribute("data-font-size", preferences.fontSize);
-    root.setAttribute("data-contrast", preferences.contrast);
-    root.setAttribute("data-theme-color", preferences.themeColor);
+    handlePreferenceStorage()
   }, [preferences]);
+
+  useEffect(() => {
+    window.addEventListener('storage', handlePreferenceStorage)
+    return () => window.removeEventListener('storage', handlePreferenceStorage)
+  }, []);
 
   const updateFontSize = (fontSize: FontSize) => {
     setPreferences((prev) => ({ ...prev, fontSize }));
