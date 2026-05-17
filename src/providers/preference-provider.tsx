@@ -45,6 +45,7 @@ export interface PreferencesContextProps extends PreferencesProps {
   updateContrast: (contrast: Contrast) => void;
   updateFontSize: (fontSize: FontSize) => void;
   updateThemeColor: (themeColor: ThemeColor) => void;
+  updateTheme: (theme: "dark" | "light") => void;
 }
 
 export const PreferencesContext = createContext<
@@ -71,8 +72,13 @@ export function PreferenceProvider({
     if (typeof window === "undefined") {
       return defaultPref;
     }
-    const stored = localStorage.getItem(storagePreferenceKey);
-    return stored ? JSON.parse(stored) : defaultPref;
+    try {
+      const stored = localStorage.getItem(storagePreferenceKey);
+      return stored ? JSON.parse(stored) : defaultPref;
+    } catch (error) {
+      console.error("Failed to parse preferences from localStorage", error);
+      return defaultPref;
+    }
   });
 
   const handlePreferenceStorage = useCallback(() => {

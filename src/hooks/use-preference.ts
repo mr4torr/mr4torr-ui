@@ -8,7 +8,7 @@ export function usePreference(): PreferencesContextProps {
   const context = useContext(PreferencesContext);
 
   if (context === undefined) {
-    throw new Error("usePreferences must be used within a ThemeProvider");
+    throw new Error("usePreference must be used within a PreferenceProvider");
   }
 
   return context;
