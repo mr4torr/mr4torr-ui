@@ -1,3 +1,5 @@
+/* https://tailwindcss.com/docs/theme#default-theme-variable-reference */
+:root,
 .light[data-theme-color="lime"] {
     --primary: oklch(0.841 0.238 128.85);
     --primary-foreground: oklch(0.405 0.101 131.063);

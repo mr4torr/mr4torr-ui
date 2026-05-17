@@ -1,3 +1,4 @@
+/* https://tailwindcss.com/docs/theme#default-theme-variable-reference */
 :root,
 .light[data-contrast="neutral"] {
     --background: oklch(0.97 0 0);
@@ -20,7 +21,6 @@
     --border: oklch(0.922 0 0);
     --input: oklch(0.902 0 0);
 
-    --radius: 0.625rem;
     --sidebar: oklch(0.985 0 0);
     --sidebar-foreground: oklch(0.427 0 0);
 
