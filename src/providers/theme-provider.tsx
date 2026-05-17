@@ -1,15 +1,28 @@
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import type { ReactNode } from "react";
-import { PreferenceProvider } from "./preference-provider";
+import {
+  PreferenceProvider,
+  type PreferencesProps,
+} from "./preference-provider";
 
 export function ThemeProvider({
   children,
   storagePreferenceKey,
+  defaultPreferences,
   ...props
-}: { children: ReactNode, storagePreferenceKey?: string } & React.ComponentProps<typeof NextThemesProvider>) {
+}: {
+  children: ReactNode;
+  storagePreferenceKey?: string;
+  defaultPreferences?: Partial<PreferencesProps>;
+} & React.ComponentProps<typeof NextThemesProvider>) {
   return (
     <NextThemesProvider {...props}>
-      <PreferenceProvider storagePreferenceKey={storagePreferenceKey}>{children}</PreferenceProvider>
+      <PreferenceProvider
+        defaultPreferences={defaultPreferences}
+        storagePreferenceKey={storagePreferenceKey}
+      >
+        {children}
+      </PreferenceProvider>
     </NextThemesProvider>
   );
 }
