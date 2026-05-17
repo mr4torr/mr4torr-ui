@@ -79,7 +79,7 @@
     "exports": {
         "./package.json": "./package.json",
         "./globals.css": "./src/styles/globals.css",
-        "./themes/lime.css": "./src/styles/themes/lime.css",
+        "./themes/*": "./src/styles/**/*.css",
         "./components/*": {
             "types": "./src/components/*.d.ts",
             "import": "./src/components/*.tsx"
