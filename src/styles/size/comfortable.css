@@ -1,6 +1,6 @@
 /* https://tailwindcss.com/docs/theme#default-theme-variable-reference */
 [data-font-size="comfortable"] {
-    --radius: 0.75rem;
+    --radius: 0.625rem;
     --font-size: 0.9375rem; /* 15px */
-    --spacing: 0.3rem;
+    --spacing: 0.25rem;
 }
