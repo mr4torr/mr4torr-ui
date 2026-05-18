@@ -1,32 +1,32 @@
 .light[data-theme-color="blue"] {
-    --primary: oklch(0.588 0.158 256.239);
-    --primary-foreground: oklch(1 0 0);
-    --secondary: oklch(0.9 0.03 256);
-    --secondary-foreground: oklch(0.2 0.1 256);
-    --ring: oklch(0.588 0.158 256.239);
+    --primary: oklch(0.623 0.214 259.815);
+    --primary-foreground: oklch(0.98 0.01 259.815);
+    --secondary: oklch(0.795 0.184 86.047);
+    --secondary-foreground: oklch(0.2 0.02 86.047);
+    --ring: oklch(0.623 0.214 259.815);
 
-    --chart-1: oklch(0.845 0.143 256.239);
-    --chart-2: oklch(0.696 0.17 256.239);
-    --chart-3: oklch(0.596 0.145 256.239);
-    --chart-4: oklch(0.508 0.118 256.239);
-    --chart-5: oklch(0.432 0.095 256.239);
+    --chart-1: oklch(0.845 0.143 259.815);
+    --chart-2: oklch(0.696 0.17 259.815);
+    --chart-3: oklch(0.596 0.145 259.815);
+    --chart-4: oklch(0.508 0.118 259.815);
+    --chart-5: oklch(0.432 0.095 259.815);
 
-    --sidebar-primary: oklch(0.588 0.158 256.239);
-    --sidebar-primary-foreground: oklch(1 0 0);
+    --sidebar-primary: oklch(0.623 0.214 259.815);
+    --sidebar-primary-foreground: oklch(0.98 0.01 259.815);
 }
 .dark[data-theme-color="blue"] {
-    --primary: oklch(0.588 0.158 256.239);
-    --primary-foreground: oklch(1 0 0);
-    --secondary: oklch(0.2 0.1 256);
-    --secondary-foreground: oklch(0.9 0.03 256);
-    --ring: oklch(0.588 0.158 256.239);
+    --primary: oklch(0.623 0.214 259.815);
+    --primary-foreground: oklch(0.98 0.01 259.815);
+    --secondary: oklch(0.795 0.184 86.047);
+    --secondary-foreground: oklch(0.2 0.02 86.047);
+    --ring: oklch(0.623 0.214 259.815);
 
-    --chart-1: oklch(0.845 0.143 256.239);
-    --chart-2: oklch(0.696 0.17 256.239);
-    --chart-3: oklch(0.596 0.145 256.239);
-    --chart-4: oklch(0.508 0.118 256.239);
-    --chart-5: oklch(0.432 0.095 256.239);
+    --chart-1: oklch(0.845 0.143 259.815);
+    --chart-2: oklch(0.696 0.17 259.815);
+    --chart-3: oklch(0.596 0.145 259.815);
+    --chart-4: oklch(0.508 0.118 259.815);
+    --chart-5: oklch(0.432 0.095 259.815);
 
-    --sidebar-primary: oklch(0.588 0.158 256.239);
-    --sidebar-primary-foreground: oklch(1 0 0);
+    --sidebar-primary: oklch(0.623 0.214 259.815);
+    --sidebar-primary-foreground: oklch(0.98 0.01 259.815);
 }
