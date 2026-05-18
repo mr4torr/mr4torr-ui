@@ -1,0 +1,32 @@
+.light[data-theme-color="violet"] {
+    --primary: oklch(0.606 0.25 273.428);
+    --primary-foreground: oklch(1 0 0);
+    --secondary: oklch(0.9 0.05 273);
+    --secondary-foreground: oklch(0.2 0.1 273);
+    --ring: oklch(0.606 0.25 273.428);
+
+    --chart-1: oklch(0.845 0.143 273.428);
+    --chart-2: oklch(0.696 0.17 273.428);
+    --chart-3: oklch(0.596 0.145 273.428);
+    --chart-4: oklch(0.508 0.118 273.428);
+    --chart-5: oklch(0.432 0.095 273.428);
+
+    --sidebar-primary: oklch(0.606 0.25 273.428);
+    --sidebar-primary-foreground: oklch(1 0 0);
+}
+.dark[data-theme-color="violet"] {
+    --primary: oklch(0.606 0.25 273.428);
+    --primary-foreground: oklch(1 0 0);
+    --secondary: oklch(0.25 0.1 273);
+    --secondary-foreground: oklch(0.9 0.05 273);
+    --ring: oklch(0.606 0.25 273.428);
+
+    --chart-1: oklch(0.845 0.143 273.428);
+    --chart-2: oklch(0.696 0.17 273.428);
+    --chart-3: oklch(0.596 0.145 273.428);
+    --chart-4: oklch(0.508 0.118 273.428);
+    --chart-5: oklch(0.432 0.095 273.428);
+
+    --sidebar-primary: oklch(0.606 0.25 273.428);
+    --sidebar-primary-foreground: oklch(1 0 0);
+}

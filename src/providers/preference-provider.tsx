@@ -45,7 +45,6 @@ export interface PreferencesContextProps extends PreferencesProps {
   updateContrast: (contrast: Contrast) => void;
   updateFontSize: (fontSize: FontSize) => void;
   updateThemeColor: (themeColor: ThemeColor) => void;
-  updateTheme: (theme: "dark" | "light") => void;
 }
 
 export const PreferencesContext = createContext<
@@ -118,16 +117,11 @@ export function PreferenceProvider({
     setPreferences((prev) => ({ ...prev, themeColor }));
   }, []);
 
-  const updateTheme = useCallback((theme: "dark" | "light") => {
-    setPreferences((prev) => ({ ...prev, theme }));
-  }, []);
-
   const value = useMemo(
     () => ({
       ...preferences,
       updateFontSize,
       updateContrast,
-      updateTheme,
       updateThemeColor,
     }),
     [preferences]

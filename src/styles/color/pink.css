@@ -1,0 +1,32 @@
+.light[data-theme-color="pink"] {
+    --primary: oklch(0.712 0.194 351.728);
+    --primary-foreground: oklch(1 0 0);
+    --secondary: oklch(0.9 0.05 351);
+    --secondary-foreground: oklch(0.2 0.1 351);
+    --ring: oklch(0.712 0.194 351.728);
+
+    --chart-1: oklch(0.845 0.143 351.728);
+    --chart-2: oklch(0.696 0.17 351.728);
+    --chart-3: oklch(0.596 0.145 351.728);
+    --chart-4: oklch(0.508 0.118 351.728);
+    --chart-5: oklch(0.432 0.095 351.728);
+
+    --sidebar-primary: oklch(0.712 0.194 351.728);
+    --sidebar-primary-foreground: oklch(1 0 0);
+}
+.dark[data-theme-color="pink"] {
+    --primary: oklch(0.712 0.194 351.728);
+    --primary-foreground: oklch(1 0 0);
+    --secondary: oklch(0.3 0.1 351);
+    --secondary-foreground: oklch(0.9 0.05 351);
+    --ring: oklch(0.712 0.194 351.728);
+
+    --chart-1: oklch(0.845 0.143 351.728);
+    --chart-2: oklch(0.696 0.17 351.728);
+    --chart-3: oklch(0.596 0.145 351.728);
+    --chart-4: oklch(0.508 0.118 351.728);
+    --chart-5: oklch(0.432 0.095 351.728);
+
+    --sidebar-primary: oklch(0.712 0.194 351.728);
+    --sidebar-primary-foreground: oklch(1 0 0);
+}

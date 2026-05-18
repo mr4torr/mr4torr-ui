@@ -1,0 +1,32 @@
+.light[data-theme-color="cyan"] {
+    --primary: oklch(0.789 0.154 211.53);
+    --primary-foreground: oklch(0.3 0.1 211);
+    --secondary: oklch(0.9 0.05 211);
+    --secondary-foreground: oklch(0.2 0.1 211);
+    --ring: oklch(0.789 0.154 211.53);
+
+    --chart-1: oklch(0.845 0.143 211.53);
+    --chart-2: oklch(0.696 0.17 211.53);
+    --chart-3: oklch(0.596 0.145 211.53);
+    --chart-4: oklch(0.508 0.118 211.53);
+    --chart-5: oklch(0.432 0.095 211.53);
+
+    --sidebar-primary: oklch(0.789 0.154 211.53);
+    --sidebar-primary-foreground: oklch(0.3 0.1 211);
+}
+.dark[data-theme-color="cyan"] {
+    --primary: oklch(0.789 0.154 211.53);
+    --primary-foreground: oklch(0.2 0.1 211);
+    --secondary: oklch(0.3 0.1 211);
+    --secondary-foreground: oklch(0.9 0.05 211);
+    --ring: oklch(0.789 0.154 211.53);
+
+    --chart-1: oklch(0.845 0.143 211.53);
+    --chart-2: oklch(0.696 0.17 211.53);
+    --chart-3: oklch(0.596 0.145 211.53);
+    --chart-4: oklch(0.508 0.118 211.53);
+    --chart-5: oklch(0.432 0.095 211.53);
+
+    --sidebar-primary: oklch(0.789 0.154 211.53);
+    --sidebar-primary-foreground: oklch(0.2 0.1 211);
+}
