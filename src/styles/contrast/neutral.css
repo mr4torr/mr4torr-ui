@@ -5,7 +5,8 @@
     --background-weak: oklch(1 0.0000 0);
     --foreground: oklch(0.205 0.0000 0);
     --foreground-heavy: oklch(0.277 0.0000 0);
-    --alpha: oklch(0.277 0.0000 0);
+    /* --alpha: oklch(0.277 0.0000 0); */
+    --alpha: oklch(0.427 0.0000 0);
     --foreground-weak: oklch(0.686 0.0000 0);
     --card: oklch(0.377 0.0000 0 / 2%);
     --card-foreground: oklch(0.427 0.0000 0);
