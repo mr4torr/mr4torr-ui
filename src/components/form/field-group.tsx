@@ -23,7 +23,7 @@ export function FieldGroup({ field, label, children, help, hint }: FieldGroupPro
           <FieldLabel htmlFor={fieldName}>{label}</FieldLabel>
         </FieldContent>
       )}
-      <FieldContent>
+      <FieldContent aria-invalid={isValid === false}>
         {children}
         {!isValid &&
           errors.map((error) => {
