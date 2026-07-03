@@ -3,24 +3,24 @@ import { cn } from "@mr4torr/ui/lib/utils";
 import type * as React from "react";
 
 function Input({ className, type, ...props }: React.ComponentProps<"input">) {
-  return (
-    <InputPrimitive
-      className={cn(
-        "h-9 w-full min-w-0 rounded-md border border-input bg-background-weak",
-        "placeholder:text-muted-foreground/50",
-        "px-2.5 py-1 text-base outline-none transition-[color,box-shadow] md:text-sm",
-        "file:inline-flex file:h-7 file:border-0 file:bg-background file:font-medium file:text-foreground file:text-sm",
-        "focus-visible:border-ring focus-visible:bg-ring/5 focus-visible:ring-3 focus-visible:ring-ring/25 dark:focus-visible:bg-ring/10 dark:focus-visible:ring-ring/40",
-        "disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50",
-        "aria-invalid:border-destructive aria-invalid:bg-destructive/5 aria-invalid:ring-3 aria-invalid:ring-destructive/20",
-        "file:px-2 file:text-foreground/70 dark:bg-input/30 dark:aria-invalid:border-destructive/70 dark:aria-invalid:ring-destructive/30 dark:aria-invalid:focus-visible:border-destructive dark:file:bg-transparent",
-        className
-      )}
-      data-slot="input"
-      type={type}
-      {...props}
-    />
-  );
+    return (
+        <InputPrimitive
+            className={cn(
+                "h-9 w-full min-w-0 rounded-md border border-input bg-background-weak",
+                "placeholder:text-muted-foreground/50",
+                "px-2.5 py-1 text-base outline-none transition-[color,box-shadow] md:text-sm",
+                "file:inline-flex file:h-7 file:border-0 file:bg-background file:font-medium file:text-foreground file:text-sm",
+                "focus-visible:border-ring focus-visible:bg-ring/5 focus-visible:ring-3 focus-visible:ring-ring/25 dark:focus-visible:bg-ring/10 dark:focus-visible:ring-ring/40",
+                "disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50",
+                "aria-invalid:border-destructive aria-invalid:bg-destructive/5 aria-invalid:ring-3 aria-invalid:ring-destructive/20",
+                "file:px-2 file:text-foreground/70 dark:bg-input/30 dark:aria-invalid:border-destructive/70 dark:aria-invalid:ring-destructive/30 dark:aria-invalid:focus-visible:border-destructive dark:file:bg-transparent",
+                className,
+            )}
+            data-slot="input"
+            type={type}
+            {...props}
+        />
+    );
 }
 
 export { Input };

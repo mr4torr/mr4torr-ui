@@ -1,138 +1,116 @@
-import {
-  createContext,
-  type ReactNode,
-  useCallback,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import { createContext, type ReactNode, useCallback, useEffect, useMemo, useState } from "react";
 
 export type FontSize = "compact" | "default" | "comfortable";
-export type Contrast =
-  | "slate"
-  | "gray"
-  | "zinc"
-  | "stone"
-  | "mauve"
-  | "neutral"
-  | "taupe"
-  | "mist"
-  | "olive";
+export type Contrast = "slate" | "gray" | "zinc" | "stone" | "mauve" | "neutral" | "taupe" | "mist" | "olive";
 
 export type ThemeColor =
-  | "amber"
-  | "blue"
-  | "cyan"
-  | "emerald"
-  | "fuchsia"
-  | "indigo"
-  | "lime"
-  | "green"
-  | "orange"
-  | "pink"
-  | "purple"
-  | "red"
-  | "rose"
-  | "sky"
-  | "teal"
-  | "violet"
-  | "yellow";
+    | "amber"
+    | "blue"
+    | "cyan"
+    | "emerald"
+    | "fuchsia"
+    | "indigo"
+    | "lime"
+    | "green"
+    | "orange"
+    | "pink"
+    | "purple"
+    | "red"
+    | "rose"
+    | "sky"
+    | "teal"
+    | "violet"
+    | "yellow";
 
 export interface PreferencesProps {
-  contrast: Contrast;
-  fontSize: FontSize;
-  themeColor: ThemeColor;
+    contrast: Contrast;
+    fontSize: FontSize;
+    themeColor: ThemeColor;
 }
 
 export interface PreferencesContextProps extends PreferencesProps {
-  updateContrast: (contrast: Contrast) => void;
-  updateFontSize: (fontSize: FontSize) => void;
-  updateThemeColor: (themeColor: ThemeColor) => void;
+    updateContrast: (contrast: Contrast) => void;
+    updateFontSize: (fontSize: FontSize) => void;
+    updateThemeColor: (themeColor: ThemeColor) => void;
 }
 
-export const PreferencesContext = createContext<
-  PreferencesContextProps | undefined
->(undefined);
+export const PreferencesContext = createContext<PreferencesContextProps | undefined>(undefined);
 
 const _defaultPreferences: PreferencesProps = {
-  fontSize: "default",
-  contrast: "neutral",
-  themeColor: "lime",
+    fontSize: "default",
+    contrast: "neutral",
+    themeColor: "lime",
 };
 
 export function PreferenceProvider({
-  children,
-  storagePreferenceKey = "ui-preferences",
-  defaultPreferences = _defaultPreferences,
+    children,
+    storagePreferenceKey = "ui-preferences",
+    defaultPreferences = _defaultPreferences,
 }: {
-  children: ReactNode;
-  defaultPreferences?: Partial<PreferencesProps>;
-  storagePreferenceKey?: string;
+    children: ReactNode;
+    defaultPreferences?: Partial<PreferencesProps>;
+    storagePreferenceKey?: string;
 }) {
-  const defaultPref = { ..._defaultPreferences, ...defaultPreferences };
-  const [preferences, setPreferences] = useState<PreferencesProps>(() => {
-    if (typeof window === "undefined") {
-      return defaultPref;
-    }
-    try {
-      const stored = localStorage.getItem(storagePreferenceKey);
-      return stored ? JSON.parse(stored) : defaultPref;
-    } catch (error) {
-      console.error("Failed to parse preferences from localStorage", error);
-      return defaultPref;
-    }
-  });
+    const defaultPref = { ..._defaultPreferences, ...defaultPreferences };
+    const [preferences, setPreferences] = useState<PreferencesProps>(() => {
+        if (typeof window === "undefined") {
+            return defaultPref;
+        }
+        try {
+            const stored = localStorage.getItem(storagePreferenceKey);
+            return stored ? JSON.parse(stored) : defaultPref;
+        } catch (error) {
+            console.error("Failed to parse preferences from localStorage", error);
+            return defaultPref;
+        }
+    });
 
-  const handlePreferenceStorage = useCallback(() => {
-    localStorage.setItem(storagePreferenceKey, JSON.stringify(preferences));
+    const handlePreferenceStorage = useCallback(() => {
+        localStorage.setItem(storagePreferenceKey, JSON.stringify(preferences));
 
-    const root = window.document.documentElement;
+        const root = window.document.documentElement;
 
-    // Remove previous attributes
-    root.removeAttribute("data-font-size");
-    root.removeAttribute("data-contrast");
-    root.removeAttribute("data-theme-color");
+        // Remove previous attributes
+        root.removeAttribute("data-font-size");
+        root.removeAttribute("data-contrast");
+        root.removeAttribute("data-theme-color");
 
-    // Add new attributes
-    root.setAttribute("data-font-size", preferences.fontSize);
-    root.setAttribute("data-contrast", preferences.contrast);
-    root.setAttribute("data-theme-color", preferences.themeColor);
-  }, [preferences, storagePreferenceKey]);
+        // Add new attributes
+        root.setAttribute("data-font-size", preferences.fontSize);
+        root.setAttribute("data-contrast", preferences.contrast);
+        root.setAttribute("data-theme-color", preferences.themeColor);
+    }, [preferences, storagePreferenceKey]);
 
-  useEffect(() => {
-    handlePreferenceStorage();
-  }, [preferences, handlePreferenceStorage]);
+    useEffect(() => {
+        handlePreferenceStorage();
+    }, [preferences, handlePreferenceStorage]);
 
-  useEffect(() => {
-    window.addEventListener("storage", handlePreferenceStorage);
-    return () => window.removeEventListener("storage", handlePreferenceStorage);
-  }, [handlePreferenceStorage]);
+    useEffect(() => {
+        window.addEventListener("storage", handlePreferenceStorage);
+        return () => window.removeEventListener("storage", handlePreferenceStorage);
+    }, [handlePreferenceStorage]);
 
-  const updateFontSize = useCallback((fontSize: FontSize) => {
-    setPreferences((prev) => ({ ...prev, fontSize }));
-  }, []);
+    const updateFontSize = useCallback((fontSize: FontSize) => {
+        setPreferences((prev) => ({ ...prev, fontSize }));
+    }, []);
 
-  const updateContrast = useCallback((contrast: Contrast) => {
-    setPreferences((prev) => ({ ...prev, contrast }));
-  }, []);
+    const updateContrast = useCallback((contrast: Contrast) => {
+        setPreferences((prev) => ({ ...prev, contrast }));
+    }, []);
 
-  const updateThemeColor = useCallback((themeColor: ThemeColor) => {
-    setPreferences((prev) => ({ ...prev, themeColor }));
-  }, []);
+    const updateThemeColor = useCallback((themeColor: ThemeColor) => {
+        setPreferences((prev) => ({ ...prev, themeColor }));
+    }, []);
 
-  const value = useMemo(
-    () => ({
-      ...preferences,
-      updateFontSize,
-      updateContrast,
-      updateThemeColor,
-    }),
-    [preferences]
-  );
+    const value = useMemo(
+        () => ({
+            ...preferences,
+            updateFontSize,
+            updateContrast,
+            updateThemeColor,
+        }),
+        [preferences],
+    );
 
-  return (
-    <PreferencesContext.Provider value={value}>
-      {children}
-    </PreferencesContext.Provider>
-  );
+    return <PreferencesContext.Provider value={value}>{children}</PreferencesContext.Provider>;
 }

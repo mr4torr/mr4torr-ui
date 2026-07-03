@@ -2,7 +2,6 @@ import type { AnyFieldApi } from "@tanstack/react-form";
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
-// biome-ignore lint/performance/noBarrelFile: export cva
 export { cva, type VariantProps } from "class-variance-authority";
 
 export function cn(...inputs: ClassValue[]) {
