@@ -83,7 +83,7 @@ export function PreferenceProvider({
 
     useEffect(() => {
         handlePreferenceStorage();
-    }, [preferences, handlePreferenceStorage]);
+    }, [handlePreferenceStorage]);
 
     useEffect(() => {
         window.addEventListener("storage", handlePreferenceStorage);
@@ -109,7 +109,7 @@ export function PreferenceProvider({
             updateContrast,
             updateThemeColor,
         }),
-        [preferences],
+        [preferences, updateContrast, updateFontSize, updateThemeColor],
     );
 
     return <PreferencesContext.Provider value={value}>{children}</PreferencesContext.Provider>;
