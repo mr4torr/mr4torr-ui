@@ -2,7 +2,9 @@ import { withThemeByDataAttribute } from "@storybook/addon-themes";
 import type { Preview } from "@storybook/react-vite";
 import React from "react";
 
-import "../src/styles/themes/lime.css";
+import "../src/styles/color/lime.css";
+import "../src/styles/contrast/neutral.css";
+import "../src/styles/size/default.css";
 import "./custom.css";
 
 const preview: Preview = {
